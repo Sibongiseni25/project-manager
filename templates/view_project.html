@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="details">
+
+<h1>{{ project.title }}</h1>
+
+{% if project.image %}
+
+<img
+src="/uploads/{{ project.image }}"
+class="big-image">
+
+{% endif %}
+
+<p>
+
+<strong>Category:</strong>
+
+{{ project.category }}
+
+</p>
+
+<p>
+
+<strong>Date:</strong>
+
+{{ project.created_date }}
+
+</p>
+
+<p>
+
+{{ project.description }}
+
+</p>
+
+{% if project.github %}
+
+<a href="{{ project.github }}"
+target="_blank"
+class="btn">
+
+GitHub Repository
+
+</a>
+
+{% endif %}
+
+<br><br>
+
+{% if project.filename %}
+
+<a
+href="/uploads/{{ project.filename }}"
+class="btn">
+
+Download File
+
+</a>
+
+{% endif %}
+
+</div>
+
+{% endblock %}
