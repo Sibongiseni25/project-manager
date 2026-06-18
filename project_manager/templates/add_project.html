@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="form-box">
+
+<h2>Add New Project</h2>
+
+<form method="POST"
+      enctype="multipart/form-data">
+
+<input
+type="text"
+name="title"
+placeholder="Project Title"
+required>
+
+<textarea
+name="description"
+placeholder="Project Description"></textarea>
+
+<select name="category">
+
+<option>AI / Computer Vision</option>
+
+<option>Software Development</option>
+
+<option>School Project</option>
+
+<option>Research</option>
+
+<option>Other</option>
+
+</select>
+
+<input
+type="url"
+name="github"
+placeholder="GitHub Link">
+
+<label>Thumbnail Image</label>
+
+<input
+type="file"
+name="image">
+
+<label>Project File</label>
+
+<input
+type="file"
+name="project_file">
+
+<button type="submit">
+
+Save Project
+
+</button>
+
+</form>
+
+</div>
+
+{% endblock %}

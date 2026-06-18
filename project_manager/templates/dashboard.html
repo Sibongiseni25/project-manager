@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<a href="/add" class="btn">
+    + Add Project
+</a>
+
+<br><br>
+
+<div class="grid">
+
+{% for project in projects %}
+
+<div class="card">
+
+    {% if project.image %}
+
+    <img src="/uploads/{{ project.image }}">
+
+    {% endif %}
+
+    <div class="card-body">
+
+        <h2>{{ project.title }}</h2>
+
+        <p>{{ project.category }}</p>
+
+        <a href="/project/{{ project.id }}"
+           class="btn">
+
+           View Project
+
+        </a>
+
+        <a href="/delete/{{ project.id }}"
+           class="delete">
+
+           Delete
+
+        </a>
+
+    </div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}
