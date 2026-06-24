@@ -2,11 +2,35 @@
 
 {% block content %}
 
-<a href="/add" class="btn">
-    + Add Project
-</a>
+<!-- Hero Section -->
+<div class="hero">
 
-<br><br>
+    <h1>Sibongiseni Nogwaja</h1>
+
+    <h3>AI Engineer | Computer Vision | Machine Learning</h3>
+
+    <p>
+        Building intelligent systems using Python, YOLO,
+        OpenCV, and Deep Learning.
+    </p>
+
+
+</div>
+
+<!-- Stats Section -->
+<div class="stats">
+
+    <div class="stat-card">
+        <h2>{{ projects|length }}</h2>
+        <p>Total Projects</p>
+    </div>
+
+
+</div>
+
+</div>
+<!-- Projects -->
+<h2 style="margin-top:40px;">Featured Projects</h2>
 
 <div class="grid">
 
@@ -15,9 +39,7 @@
 <div class="card">
 
     {% if project.image %}
-
-    <img src="/uploads/{{ project.image }}">
-
+        <img src="/uploads/{{ project.image }}">
     {% endif %}
 
     <div class="card-body">
@@ -28,16 +50,12 @@
 
         <a href="/project/{{ project.id }}"
            class="btn">
-
            View Project
-
         </a>
 
         <a href="/delete/{{ project.id }}"
            class="delete">
-
            Delete
-
         </a>
 
     </div>
